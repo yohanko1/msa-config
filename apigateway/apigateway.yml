@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: productservice
+        uri: lb://productservice
+        predicates:
+        - Path=//productservice/**
+      - id: reviewservice
+        uri: lb://reviewservice
+        predicates:
+        - Path=//reviewservice/**
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway
