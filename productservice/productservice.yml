@@ -3,7 +3,7 @@ server:
 datasource:
   url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/product?serverTimezone=UTC
   username: root
-  password: password
+  password: root
 jpa:
   hibernate.ddl-auto: update
   properties:
