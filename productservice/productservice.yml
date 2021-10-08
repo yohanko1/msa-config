@@ -1,6 +1,15 @@
 server:
   port: 0
-
+datasource:
+  url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/product?serverTimezone=UTC
+  username: root
+  password: password
+jpa:
+  hibernate.ddl-auto: update
+  properties:
+    hibernate:
+      show_sql: true
+      format_sql: true
 eureka:
   client:
     register-with-eureka: true
