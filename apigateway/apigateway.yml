@@ -19,7 +19,7 @@ spring:
       - id: reviewservice
         uri: lb://reviewservice
         predicates:
-        - Path=/products/{id}/reviews/**
+        - Path=/reviews/**
         
 management:
   endpoints:
