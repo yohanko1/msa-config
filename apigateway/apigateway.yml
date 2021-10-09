@@ -17,13 +17,13 @@ spring:
         predicates:
         - Path=/productservice/**
         filters:
-        - RewritePath=/productservice
+        - RewritePath=/productservice, /product
       - id: reviewservice
         uri: lb://reviewservice
         predicates:
         - Path=/reviewservice/**
         filters:
-        - RewritePath=/review
+        - RewritePath=/reviewservice, /review
 
         
 management:
