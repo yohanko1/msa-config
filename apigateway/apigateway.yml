@@ -14,12 +14,9 @@ spring:
       routes:
       - id: productservice
         uri: lb://productservice
-        predicates:
-        - Path=/products/**
       - id: reviewservice
         uri: lb://reviewservice
-        predicates:
-        - Path=/reviews/**
+
         
 management:
   endpoints:
