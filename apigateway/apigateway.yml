@@ -23,7 +23,7 @@ spring:
         predicates:
         - Path=/reviewservice/**
         filters:
-        - RewritePath=/reviewservice, /review
+        - RewritePath=/reviewservice/(?<segment>.*), /$/review/\{segment}
 
         
 management:
