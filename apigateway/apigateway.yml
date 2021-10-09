@@ -15,16 +15,11 @@ spring:
       - id: productservice
         uri: lb://productservice
         predicates:
-        - Path=/productservice/**
-        filters:
-        - RewritePath=/productservice, /product
+        - Path=/products/**
       - id: reviewservice
         uri: lb://reviewservice
         predicates:
-        - Path=/reviewservice/**
-        filters:
-        - RewritePath=/reviewservice/(?<segment>.*), /$/review/\{segment}
-
+        - Path=/products/{id}/reviews/**
         
 management:
   endpoints:
