@@ -21,3 +21,8 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+        
+resilience4j.circuitbreaker:
+  instances:
+    reviewservice:
+      registerHealthIndicator: true
