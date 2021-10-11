@@ -15,11 +15,11 @@ spring:
       - id: productservice
         uri: lb://productservice
         predicates:
-        - Path=/products**
+        - Path=/products**,/products/**
       - id: reviewservice
         uri: lb://reviewservice
         predicates:
-        - Path=/products/{productId}/reviews**,/reviews/all
+        - Path=/products/{productId}/reviews**,/products/{productId}/reviews/**,/reviews/all
         
 management:
   endpoints:
