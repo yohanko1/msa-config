@@ -19,10 +19,15 @@ spring:
       - id: reviewservice
         uri: lb://reviewservice
         predicates:
-        - Path=/products/{productId}/reviews,/products/{productId}/reviews/{id},/reviews/all
+        - Path=/products/{productId}/reviews,/products/{productId}/reviews/{id},/reviews
         
 management:
   endpoints:
     web:
       exposure:
         include: gateway
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
