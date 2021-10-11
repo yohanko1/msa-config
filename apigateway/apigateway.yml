@@ -28,6 +28,3 @@ management:
         include: gateway
     health:
       show-details: always
-  health:
-    circuitbreakers:
-      enabled: true
