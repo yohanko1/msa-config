@@ -6,12 +6,12 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://${REGISTRY_SERVER:localhost:8761}/eureka/
 
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:3306/product?serverTimezone=UTC
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1:3306}/product?serverTimezone=UTC
     username: root
     password: root
 
